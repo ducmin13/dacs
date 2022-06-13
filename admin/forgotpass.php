@@ -1,7 +1,3 @@
-<?php
-    include('/xampp/htdocs/doancoso/admin/database.php');
-    $con = mysqli_connect("localhost", "root", "", "dacs");
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,23 +12,31 @@
         <div class="container">
             <div class="row justify-content-around">
                 <form action='login.php' method='POST' class="col-md-6 bg-light p-3 my-3">
-                    <h1 class="text-center text-uppercase h3 py-3"> Đăng Nhập</h1>
+                    <h1 class="text-center text-uppercase h3 py-3">Đổi mật khẩu</h1>
                     <div class="form-group">
-                        <label for="username">Tên đăng nhập</label>
+                        <label for="username">Tên tài khoản</label>
                         <input type="text" name="username" 
                         id="username" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="password">Mật khẩu</label>
+                        <label for="password">Mật khẩu cũ</label>
                         <input type="password" name="password" 
                         id="password" class="form-control"required>
                     </div>
-                        <input type="Checkbox" name="remember-me" id="remember-me">
-                        <label for="p-3">Lưu tài khoản</label>
-                    <input type="submit" value="Đăng nhập" class="btn-primary btn btn-block my-3">
-                    <p>Chưa có tài khoản?
-                    <a href='formdangky.php' title='Đăng ký' >Đăng ký </a>
-                    <a style="float: right;" href='../index.php' title='Trang chủ' >Trang chủ</a>
+                    <div class="form-group">
+                        <label for="newpassword">Mật khẩu mới</label>
+                        <input type="password" name="newpassword" 
+                        id="newpassword" class="form-control"required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cfnewpassword">Nhập lại mật khẩu mới</label>
+                        <input type="password" name="cfnewpassword" 
+                        id="cfnewpassword" class="form-control"required>
+                    </div>
+
+                    <input type="submit" value="Xác nhận" class="btn-primary btn btn-block my-3">
+                    
+                    <a href='../infuser.php' title='Đổi mật khẩu' >Trở về</a>
                     </p>
                 </form>
             </div>

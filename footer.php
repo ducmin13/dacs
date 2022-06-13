@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/f8d037ce4a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/style.css">
-    <title>Trang chủ</title>
-</head>
 
 <div class="footer">
         <div class="container">
@@ -25,7 +14,7 @@
                 <!-- logo footer -->
                 <div class="footer-col-2">
                     <img src="./images/logo-one.png" alt="">
-                    <p>Viết cái gì đó ở đây!</p>
+                    <p>Cảm ơn bạn đã đến với TMD shop!</p>
                 </div>
               
                 <!-- link -->

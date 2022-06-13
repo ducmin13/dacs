@@ -29,7 +29,7 @@ $con = mysqli_connect("localhost", "root", "", "dacs");
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
     	<li class="nav-item active">
-        <a class="nav-link" href="#">Trang chủ<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="./index.php">Trang chủ<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="#">Giới thiệu<span class="sr-only">(current)</span></a>
@@ -46,9 +46,6 @@ $con = mysqli_connect("localhost", "root", "", "dacs");
       </li>
      
       <li class="nav-item active">
-        <a class="nav-link" href="#">Chính sách<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active">
         <a class="nav-link" href="./admin/formdangnhap.php">Đăng nhập<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
@@ -60,5 +57,5 @@ $con = mysqli_connect("localhost", "root", "", "dacs");
     </nav>
     <!--end menu-->
 
-    
+
  

@@ -48,6 +48,7 @@ $con = mysqli_connect("localhost", "root", "", "dacs");
                     <input  type="submit" value="Đăng ký" class="btn-primary btn btn-block">
                     <p>Đã có tài khoản?
                     <a href='formdangnhap.php' title='Đăng nhập' >Đăng nhập </a>
+                    <a style="float: right;" href='../index.php' title='Trang chủ' >Trang chủ</a>
                 </form>
             </div>
         </div>
