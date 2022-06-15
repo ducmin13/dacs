@@ -17,7 +17,7 @@ $con = mysqli_connect("localhost", "root", "", "dacs");
     <div class="wrapper">
         <div class="container">
             <div class="row justify-content-around">
-                <form action="registor.php" method="POST" class="col-md-6 bg-light p-3 my-3">
+                <form action="./admin/registor.php" method="POST" class="col-md-6 bg-light p-3 my-3">
                     <h1 class="text-center text-uppercase h3 py-3"> Đăng ký tài khoản</h1>
 
                     <div class="form-group">
@@ -48,7 +48,7 @@ $con = mysqli_connect("localhost", "root", "", "dacs");
                     <input  type="submit" value="Đăng ký" class="btn-primary btn btn-block">
                     <p>Đã có tài khoản?
                     <a href='formdangnhap.php' title='Đăng nhập' >Đăng nhập </a>
-                    <a style="float: right;" href='../index.php' title='Trang chủ' >Trang chủ</a>
+                    <a style="float: right;" href='./index.php' title='Trang chủ' >Trang chủ</a>
                 </form>
             </div>
         </div>

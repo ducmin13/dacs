@@ -22,7 +22,11 @@ if (isset($_POST['username']))
      
     //Kiểm tra đã nhập đủ tên đăng nhập với mật khẩu chưa
     if (!$username || !$password) {
-        echo "Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu. <a href='javascript: history.go(-1)'>Trở lại</a>";
+        echo "
+			<script language='javascript'>
+			alert('Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu.');
+			window.open('../formdangnhap.php','_self', 1);
+			</script>";
         exit;
     }
      
@@ -32,7 +36,11 @@ if (isset($_POST['username']))
     //Kiểm tra tên đăng nhập có tồn tại không
     $query = mysqli_query($con,"SELECT username, password FROM member WHERE username='$username'");
     if (mysqli_num_rows($query) == 0) {
-        echo "Tên đăng nhập này không tồn tại. Vui lòng kiểm tra lại. <a href='javascript: history.go(-1)'>Trở lại</a>";
+        echo "
+			<script language='javascript'>
+			alert('Tên đăng nhập này không tồn tại. Vui lòng kiểm tra lại.');
+			window.open('../formdangnhap.php','_self', 1);
+			</script>";
         exit;
     }
      
@@ -41,21 +49,34 @@ if (isset($_POST['username']))
      
     //So sánh 2 mật khẩu có trùng khớp hay không
     if ($password != $row['password']) {
-        echo "Mật khẩu không đúng. Vui lòng nhập lại. <a href='javascript: history.go(-1)'>Trở lại</a>";
+        echo "
+			<script language='javascript'>
+			alert('Mật khẩu sai');
+			window.open('../formdangnhap.php','_self', 1);
+			</script>";
         exit;
     }
 
      
-    // $query1 = mysqli_query($con,"SELECT * FROM member WHERE username='$username' , typeuser = '$typeuser' ");
+    // $query1 = mysqli_query($con,"SELECT * FROM member WHERE username='$username' , typeuser = '$password' ");
+    // $row = mysqli_fetch_array($query1);
 
     if ($username == 'admin') {   
-        header("Location: ./categoryadd.php");
+        echo "
+			<script language='javascript'>
+			alert('Bạn đã đăng nhập với tư cách quản trị viên!');
+			window.open('./categoryadd.php','_self', 1);
+			</script>";
         die();           
     }
     else
     {             
         $_SESSION['username'] = $username;
-        header("Location: ./checklogin.php");
+        echo "
+			<script language='javascript'>
+			alert('Đăng nhập thành công');
+			window.open('../index.php','_self', 1);
+			</script>";
         die();
     }
 }

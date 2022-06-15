@@ -1,6 +1,11 @@
-<?php session_start(); 
- 
- session_destroy();
- 
- ?>
-<a href="../index.php"></a>
+<?php
+session_start();
+if(isset($_SESSION['username']) && $_SESSION['username']!=NULL){
+    unset($_SESSION['username']);
+    echo "
+			<script language='javascript'>
+			alert('Đăng xuất thành công');
+			window.open('../index.php','_self', 1);
+			</script>";
+}
+?>

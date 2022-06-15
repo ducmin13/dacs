@@ -12,7 +12,7 @@
         <div class="container">
             <div class="row justify-content-around">
                 <form action='login.php' method='POST' class="col-md-6 bg-light p-3 my-3">
-                    <h1 class="text-center text-uppercase h3 py-3">Đổi mật khẩu</h1>
+                    <h1 class="text-center text-uppercase h3 py-3">Quên mật khẩu</h1>
                     <div class="form-group">
                         <label for="username">Tên tài khoản</label>
                         <input type="text" name="username" 
@@ -36,7 +36,7 @@
 
                     <input type="submit" value="Xác nhận" class="btn-primary btn btn-block my-3">
                     
-                    <a href='../infuser.php' title='Đổi mật khẩu' >Trở về</a>
+                    <a href='./infuser.php' title='Đổi mật khẩu' >Trở về</a>
                     </p>
                 </form>
             </div>

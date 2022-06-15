@@ -1,10 +1,8 @@
 <?php 
-    include "header.php";
-    session_start();  
-    $product = new product;
-    $show_product = $product-> show_product();
+    include "header.php";  
 ?>
    <!--show products-->
+
    <hr>
      <div class="container">
          <div class="row">
@@ -12,7 +10,7 @@
          
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                 <div class="thumbnail">
-                    <img class="img-thumbnail" src="img/sp1.jpg" alt="">
+                    <img class="img-thumbnail" src="./images/sp1.1.jpg" alt="">
                     <div class="caption">
                         
                         <h6><a href="">Giày cầu lông Victor</a></h6>
@@ -29,7 +27,7 @@
             </div>
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                 <div class="thumbnail">
-                    <img class="img-thumbnail" src="img/sp1.jpg" alt="">
+                    <img class="img-thumbnail" src="./images/sp1.2.jpg" alt="">
                     <div class="caption">
                         
                         <h6><a href="">Giày cầu lông Victor</a></h6>
@@ -46,7 +44,7 @@
             </div>
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                 <div class="thumbnail">
-                    <img class="img-thumbnail" src="img/sp1.jpg" alt="">
+                    <img class="img-thumbnail" src="./images/sp1.3.jpg" alt="">
                     <div class="caption">
                         
                         <h6><a href="">Giày cầu lông Victor</a></h6>
@@ -63,7 +61,7 @@
             </div>
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                 <div class="thumbnail">
-                    <img class="img-thumbnail" src="img/sp1.jpg" alt="">
+                    <img class="img-thumbnail" src="./images/sp1.4.jpg" alt="">
                     <div class="caption">
                         
                         <h6><a href="">Giày cầu lông Victor</a></h6>
@@ -80,7 +78,7 @@
             </div>
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                 <div class="thumbnail">
-                    <img class="img-thumbnail" src="img/sp1.jpg" alt="">
+                    <img class="img-thumbnail" src="./images/hinh3.jpg" alt="">
                     <div class="caption">
                         
                         <h6><a href="">Giày cầu lông Victor</a></h6>
@@ -97,7 +95,7 @@
             </div>
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                 <div class="thumbnail">
-                    <img class="img-thumbnail" src="img/sp1.jpg" alt="">
+                    <img class="img-thumbnail" src="./images/sp1.jpg" alt="">
                     <div class="caption">
                         
                         <h6><a href="">Giày cầu lông Victor</a></h6>
@@ -114,7 +112,7 @@
             </div>
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                 <div class="thumbnail">
-                    <img class="img-thumbnail" src="img/sp1.jpg" alt="">
+                    <img class="img-thumbnail" src="./images/5.jpg" alt="">
                     <div class="caption">
                         
                         <h6><a href="">Giày cầu lông Victor</a></h6>
@@ -131,7 +129,7 @@
             </div>
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                 <div class="thumbnail">
-                    <img class="img-thumbnail" src="img/sp1.jpg" alt="">
+                    <img class="img-thumbnail" src="./images/6.jpg" alt="">
                     <div class="caption">
                         
                         <h6><a href="">Giày cầu lông Victor</a></h6>

@@ -1,5 +1,5 @@
 <?php
-    include "header.php";
+    include "./header.php";
     include "slider.php";
     include "/xampp/htdocs/doancoso/admin/class/product_class.php";
     

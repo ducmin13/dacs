@@ -15,7 +15,7 @@
     <div class="wrapper">
         <div class="container">
             <div class="row justify-content-around">
-                <form action='login.php' method='POST' class="col-md-6 bg-light p-3 my-3">
+                <form action='./admin/login.php' method='POST' class="col-md-6 bg-light p-3 my-3">
                     <h1 class="text-center text-uppercase h3 py-3"> Đăng Nhập</h1>
                     <div class="form-group">
                         <label for="username">Tên đăng nhập</label>
@@ -31,8 +31,8 @@
                         <label for="p-3">Lưu tài khoản</label>
                     <input type="submit" value="Đăng nhập" class="btn-primary btn btn-block my-3">
                     <p>Chưa có tài khoản?
-                    <a href='formdangky.php' title='Đăng ký' >Đăng ký </a>
-                    <a style="float: right;" href='../index.php' title='Trang chủ' >Trang chủ</a>
+                    <a href='./formdangky.php' title='Đăng ký' >Đăng ký </a>
+                    <a style="float: right;" href='./index.php' title='Trang chủ' >Trang chủ</a>
                     </p>
                 </form>
             </div>

@@ -1,7 +1,6 @@
 <?php 
+session_start();
 include "/xampp/htdocs/doancoso/admin/class/header_class.php";
-
-
 $con = mysqli_connect("localhost", "root", "", "dacs");
 ?>
 <!DOCTYPE html>
@@ -32,24 +31,28 @@ $con = mysqli_connect("localhost", "root", "", "dacs");
         <a class="nav-link" href="./index.php">Trang chủ<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Giới thiệu<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="./gioithieu.php">Giới thiệu<span class="sr-only">(current)</span></a>
       </li>
       
       <li class="nav-item dropdown">
-        <a class="nav-link" href="./giohang.php" id="navbarDropdown">
-          Sản phẩm
-        </a>
+        <a class="nav-link" href="./giohang.php" id="navbarDropdown">Sản phẩm</a>
         <div class="dropdown-content">
           <a class="dropdown-item" href="#">Vợt cầu lông Yonex</a>
           <a class="dropdown-item" href="#">Vợt cầu lông Victor</a>
         </div>
       </li>
-     
       <li class="nav-item active">
-        <a class="nav-link" href="./admin/formdangnhap.php">Đăng nhập<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="./admin/formdangky.php">Đăng ký<span class="sr-only">(current)</span></a>
+      <?php    
+      $registor = '<a style="float: left;" class="nav-link" href="./formdangky.php"> Đăng ký <span class="sr-only">(current)</span></a>';
+      $login = '<a style="float: left;" class="nav-link" href="./formdangnhap.php"> Đăng nhập <span class="sr-only">(current)</span></a>';
+      if (isset($_SESSION['username']))
+      {
+        $logout = '<a style="float: left;" class="nav-link fa-solid fa-arrow-right-from-bracket" href="./admin/logout.php"><span class="sr-only">(current)</span></a>';    
+        $name = '<a style="float: left;" class="nav-link" href="./infuser.php" >'.$_SESSION['username'].'<span class="sr-only">(current)</span></a>';        
+        echo "$name $logout";}
+        else {
+         echo "$login $registor";}          
+        ?>
       </li>
     </ul>
     </div>
