@@ -18,7 +18,6 @@
                         <th>ID</th>
                         <th>Tên SP</th>
                         <th>Danh mục</th>
-                        <th>Loại</th>
                         <th>Giá gốc</th>
                         <th>Giá giảm</th>
                         <th>Mô tả</th>
@@ -41,10 +40,7 @@
                             <?php echo $result['product_name']?>
                         </td>
                         <td>
-                            <?php echo $result['category_id']?>
-                        </td>
-                        <td>
-                            <?php echo $result['brand_id']?>
+                            <?php echo $result['category_name']?>
                         </td>
                         <td>
                             <?php echo $result['product_price']?>

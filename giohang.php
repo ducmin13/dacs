@@ -1,5 +1,11 @@
-<?php 
-    include "header.php";  
+<?php
+    include "./header.php";
+?>
+
+<?php
+    $product = new product;
+    $show_product = $product-> show_product();
+    $result = $show_product->fetch_assoc();
 ?>
    <!--show products-->
 
@@ -13,10 +19,10 @@
                     <img class="img-thumbnail" src="./images/sp1.1.jpg" alt="">
                     <div class="caption">
                         
-                        <h6><a href="">Giày cầu lông Victor</a></h6>
+                        <h6><a href=""></a></h6>
                         <div class="card-text">
-                            <span class="del-price">1.200.000 đ</span>
-                            <span class="new-price">990.000 đ</span>
+                            <span class="del-price"></span>
+                            <span class="new-price"></span>
                         </div>
                         <p>
                             <a href="#" class="btn btn-primary"><i class="fa-solid fa-cart-arrow-down"></i></a>

@@ -1,7 +1,7 @@
 
 <?php
  
-    include('/xampp/htdocs/doancoso/admin/database.php');
+    include('./admin/database.php');
     $con = mysqli_connect("localhost", "root", "", "dacs");
     // Nếu không phải là sự kiện đăng ký thì không xử lý
     if (!isset($_POST['username'])){
@@ -36,7 +36,7 @@
 			</script>";
         exit;       
     }else{
-        $password = md5($password);
+        $password = base64_encode($password);
     }
 
          

@@ -29,9 +29,10 @@
                     </div>
                         <input type="Checkbox" name="remember-me" id="remember-me">
                         <label for="p-3">Lưu tài khoản</label>
+                        <a style="float: right;" href='./formquenmk.php' title='Quên mật khẩu?' >Quên mật khẩu? </a>    
                     <input type="submit" value="Đăng nhập" class="btn-primary btn btn-block my-3">
                     <p>Chưa có tài khoản?
-                    <a href='./formdangky.php' title='Đăng ký' >Đăng ký </a>
+                    <a href='./formdangky.php' title='Đăng ký' >Đăng ký </a>                   
                     <a style="float: right;" href='./index.php' title='Trang chủ' >Trang chủ</a>
                     </p>
                 </form>

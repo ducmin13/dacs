@@ -1,5 +1,5 @@
 <?php
-include ('/xampp/htdocs/doancoso/admin/database.php');
+include ('./admin/database.php');
 
 $con = mysqli_connect("localhost", "root", "", "dacs");
 //Khai báo sử dụng session
@@ -31,10 +31,10 @@ if (isset($_POST['username']))
     }
      
     // mã hóa pasword
-    $password = md5($password);
+    $password = base64_encode($password);
      
     //Kiểm tra tên đăng nhập có tồn tại không
-    $query = mysqli_query($con,"SELECT username, password FROM member WHERE username='$username'");
+    $query = mysqli_query($con,"SELECT username, password, typeuser FROM member WHERE username='$username'");
     if (mysqli_num_rows($query) == 0) {
         echo "
 			<script language='javascript'>
@@ -61,7 +61,7 @@ if (isset($_POST['username']))
     // $query1 = mysqli_query($con,"SELECT * FROM member WHERE username='$username' , typeuser = '$password' ");
     // $row = mysqli_fetch_array($query1);
 
-    if ($username == 'admin') {   
+    if ($row['typeuser'] == '1') {   
         echo "
 			<script language='javascript'>
 			alert('Bạn đã đăng nhập với tư cách quản trị viên!');

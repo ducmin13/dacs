@@ -33,6 +33,7 @@
                 <h1>Chọn loại sản phẩm</h1>
                 <br>
                 <form action="" method="POST">
+                    
                 <select name="category_id" id="">
                     <option value="#">Chọn danh mục</option>
                     <?php
