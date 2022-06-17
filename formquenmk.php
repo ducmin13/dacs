@@ -61,7 +61,7 @@ if(isset($_POST['btnlaymk'])==true){
         $mail->Password = 'steivwntbjdhaout';   // SMTP password
         $mail->SMTPSecure = 'ssl';  // encryption TLS/SSL 
         $mail->Port = 465;  // port to connect to                
-        $mail->setFrom('ngogiaanhtuan1@gmail.com', 'DucMinh' ); 
+        $mail->setFrom('ngogiaanhtuan1@gmail.com', 'TMDsport.vn' ); 
         $mail->addAddress($email); 
         $mail->isHTML(true);  // Set email format to HTML
         $mail->Subject = 'Yêu cầu lấy lại mật khẩu';

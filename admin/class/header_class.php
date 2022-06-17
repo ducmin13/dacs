@@ -1,5 +1,5 @@
 <?php
-    include "/xampp/htdocs/doancoso/admin/database.php";
+    include "../admin/database.php"
 ?>
 
 <?php

@@ -1,6 +1,6 @@
 
 <?php
-include('/xampp/htdocs/doancoso/admin/database.php');
+include('./admin/database.php');
 $con = mysqli_connect("localhost", "root", "", "dacs");
 ?>
 <!DOCTYPE html>
