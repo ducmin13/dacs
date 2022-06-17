@@ -13,4 +13,5 @@
 <body>
     <header>
         <h1>TRANG QUẢN LÝ</h1>
+        <a style="float: left; font-size:20px;" href="../index.php">Trang chủ</a>
     </header>

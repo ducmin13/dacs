@@ -51,7 +51,7 @@
                         <td>
                             <?php echo $result['product_desc']?>
                         </td>
-                        <td>
+                        <td>                           
                             <?php echo $result['product_img']?>
                         </td>
                         <td><a href="productedit.php?product_id=<?php echo $result['product_id'] ?>">Sửa| <a href="productdelete.php?product_id=<?php echo $result['product_id'] ?> "> Xóa</a></a></td>

@@ -48,14 +48,16 @@
             product_price,
             product_discount,
             product_desc,
-            product_img) 
+            product_img,
+            status) 
             VALUES (
             '$product_name',
             '$category_id',
             '$product_price',
             '$product_discount',
             '$product_desc',
-            '$product_img')";
+            '$product_img',
+            '1')";
 
             $result = $this -> db ->insert($query);
         

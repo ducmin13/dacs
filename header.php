@@ -1,4 +1,5 @@
 <?php 
+error_reporting(0); 
 session_start();
 include "/xampp/htdocs/doancoso/admin/class/header_class.php";
 $con = mysqli_connect("localhost", "root", "", "dacs");
@@ -20,7 +21,9 @@ $con = mysqli_connect("localhost", "root", "", "dacs");
     <!--start menu-->
 	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
 		<div class="container">
-			<a class="navbar-brand" href="#"></a>
+      <a class="navbar-brand" href="./index.php">
+      <img  src="./images/logoolym.png" style="width:50px;"></a>
+      
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
@@ -29,18 +32,29 @@ $con = mysqli_connect("localhost", "root", "", "dacs");
     <ul class="navbar-nav mr-auto">
     	<li class="nav-item active">
         <a class="nav-link" href="./index.php">Trang chủ<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="./gioithieu.php">Giới thiệu<span class="sr-only">(current)</span></a>
-      </li>
+      </li>  
+      <?php 
+      $query = "SELECT * FROM tbl_category WHERE  `status` = 1 ";
+      $result = mysqli_query($con,$query) or die ("lỗi");
+      if(mysqli_num_rows($result) > 0 ){   
+        while($row = mysqli_fetch_assoc($result)){       
+        ?>
+        <li class="nav-item active">
+        <a  class="nav-link" href="./giohang.php?page=category&id=<?php echo $row['category_id'] ?>"><?php echo $row['category_name'] ?> <span class="sr-only">(current)</span></a>
+        
+        </li>
+        <?php
+      }
+      }
+      ?>
       
-      <li class="nav-item dropdown">
+      <!-- <li class="nav-item dropdown">
         <a class="nav-link" href="./giohang.php" id="navbarDropdown">Sản phẩm</a>
         <div class="dropdown-content">
           <a class="dropdown-item" href="#">Vợt cầu lông Yonex</a>
           <a class="dropdown-item" href="#">Vợt cầu lông Victor</a>
         </div>
-      </li>
+      </li> -->
       <li class="nav-item active">
       <?php    
       $registor = '<a style="float: left;" class="nav-link" href="./formdangky.php"> Đăng ký <span class="sr-only">(current)</span></a>';
@@ -54,6 +68,7 @@ $con = mysqli_connect("localhost", "root", "", "dacs");
          echo "$login $registor";}          
         ?>
       </li>
+
     </ul>
     </div>
 		</div>

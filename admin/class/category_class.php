@@ -11,7 +11,7 @@
         }
 
         public function insert_category($category_name){
-            $query = "INSERT INTO tbl_category (category_name) VALUES ('$category_name')";
+            $query = "INSERT INTO tbl_category (category_name, status) VALUES ('{$category_name}', '1') ";
             $result = $this -> db ->insert($query);
             return $result;
         }
