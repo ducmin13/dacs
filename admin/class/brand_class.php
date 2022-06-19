@@ -11,7 +11,7 @@
         }
 
         public function insert_brand($category_id, $brand_name){
-            $query = "INSERT INTO tbl_brand (category_id, brand_name) VALUES ('$category_id', '$brand_name')";
+            $query = "INSERT INTO tbl_brand (category_id, brand_name, status) VALUES ('$category_id', '$brand_name' , '1')";
             $result = $this -> db ->insert($query);
             return $result;
         }

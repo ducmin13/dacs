@@ -32,6 +32,23 @@
                     ?>
                 </select>
 
+                <label for="">Chọn loại <span style="color: red;"> *</span></label>
+                <select name="brand_id" id="brand_id">
+                <option value="#">Chọn</option>
+                    <?php 
+                        $show_brand = $product-> show_brand();
+                        if($show_brand){
+                            while($result = $show_brand ->fetch_assoc()){
+                        
+                    ?>
+                    <option value="<?php echo $result ['brand_id'] ?>"> <?php echo $result ['brand_name'] ?></option>
+                    <?php                           
+                        }}
+                    ?>
+                </select>
+                <label for="">Số lượng <span style="color: red;"></span></label>
+                <input name="product_amount" required type="text">
+
                 <label for="">Giá sản phẩm <span style="color: red;"> *</span></label>
                 <input name="product_price" required type="text">
 
@@ -44,8 +61,8 @@
                 <label for="">Ảnh sản phẩm <span style="color: red;"> *</span></label>
                 <input name="product_img" required type="file">
 
-                <label for="">Ảnh mô tả <span style="color: red;">*</span></label>
-                <input name="img_desc[]" required multiple type="file">
+                <label for="">Ảnh mô tả <span style="color: red;"></span></label>
+                <input name="img_desc[]" multiple type="file">
 
                 <button type="submit"> Thêm </button>
             </form>

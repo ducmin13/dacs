@@ -17,25 +17,26 @@
             return $result;
         }
 
-        // public function show_brand_ajax($category_id){
-        //     $query = "SELECT * FROM tbl_brand WHERE category_id = '$category_id'";
-        //     $result = $this ->db->select($query);
-        //     return $result;
-        // }
+        public function show_brand_ajax($category_id){
+            $query = "SELECT * FROM tbl_brand WHERE category_id = '$category_id'";
+            $result = $this ->db->select($query);
+            return $result;
+        }
 
-        // public function show_brand(){
-        //     $query = " SELECT tbl_brand.*, tbl_category.category_name FROM tbl_brand 
-        //     INNER JOIN tbl_category ON tbl_brand.category_id = tbl_category.category_id
-        //     ORDER BY tbl_brand.brand_id DESC";
-        //     $result = $this ->db->select($query);
-        //     return $result;
-        // }
+        public function show_brand(){
+            $query = " SELECT tbl_brand.*, tbl_category.category_name FROM tbl_brand 
+            INNER JOIN tbl_category ON tbl_brand.category_id = tbl_category.category_id
+            ORDER BY tbl_brand.brand_id DESC";
+            $result = $this ->db->select($query);
+            return $result;
+        }
 
 
         public function insert_product(){
 
             $product_name = $_POST['product_name'];
             $category_id = $_POST['category_id'];
+            $brand_id = $_POST['brand_id'];
             $product_price = $_POST['product_price'];
             $product_discount = $_POST['product_discount'];
             $product_desc = $_POST['product_desc'];
@@ -45,6 +46,7 @@
             $query = "INSERT INTO tbl_product (
             product_name,
             category_id,
+            brand_id,
             product_price,
             product_discount,
             product_desc,
@@ -53,6 +55,7 @@
             VALUES (
             '$product_name',
             '$category_id',
+            '$brand_id',
             '$product_price',
             '$product_discount',
             '$product_desc',
@@ -92,10 +95,13 @@
             return $result;
         }
 
-        public function update_product($category_id,$product_name,$product_id){
-            $query = "UPDATE tbl_product SET product_name = '$product_name', category_id= '$category_id' WHERE product_id = '$product_id' " ;
+        public function update_product($category_id,$product_name,$product_id,$brand_id, $product_amount, $product_price, $product_discount, $product_desc){
+            $query = "UPDATE tbl_product SET product_name = '$product_name', category_id= '$category_id',brand_id = '$brand_id', product_amount = '$product_amount',
+                                            product_price = '$product_price', product_discount = '$product_discount', product_desc = '$product_desc'
+                                            WHERE product_id = '$product_id' " ;
             $result = $this ->db->update($query);
-            header('Location:productlist.php');
+            // header('Location:productlist.php');
+            // exit();
             return $result;
         }
 
@@ -103,6 +109,7 @@
             $query = "DELETE FROM tbl_product WHERE product_id = '$product_id' ";
             $result = $this ->db->delete($query);
             header('Location:productlist.php');
+            exit();
             return $result;
         }
 

@@ -18,10 +18,12 @@
                         <th>ID</th>
                         <th>Tên SP</th>
                         <th>Danh mục</th>
+                        <th>Loại</th>
+                        <th>Số lượng</th>
                         <th>Giá gốc</th>
                         <th>Giá giảm</th>
                         <th>Mô tả</th>
-                        <th>Tên ảnh</th>
+                        <th>Hình ảnh</th>
                         <th>Tùy biến</th>
                     </tr>
                     <?php 
@@ -43,6 +45,12 @@
                             <?php echo $result['category_name']?>
                         </td>
                         <td>
+                            <?php echo $result['brand_id'] ?>
+                        </td>
+                        <td>
+                            <?php echo $result['product_amount'] ?>
+                        </td>
+                        <td>
                             <?php echo $result['product_price']?>
                         </td>
                         <td>
@@ -51,8 +59,16 @@
                         <td>
                             <?php echo $result['product_desc']?>
                         </td>
-                        <td>                           
-                            <?php echo $result['product_img']?>
+                        <td>
+                            <style>img{
+                                display: block;
+                                max-width:250px;
+                                max-height:100px;
+                                width: auto;
+                                height: auto;
+                                } </style>             
+                            <img style="" src="./uploads/<?php echo $result["product_img"] ?>" alt="<?php echo $row1["product_id"]?>">              
+                            
                         </td>
                         <td><a href="productedit.php?product_id=<?php echo $result['product_id'] ?>">Sửa| <a href="productdelete.php?product_id=<?php echo $result['product_id'] ?> "> Xóa</a></a></td>
                     </tr>

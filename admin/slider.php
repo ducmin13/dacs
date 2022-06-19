@@ -43,7 +43,27 @@
             <li class="nav-item">
                 <a class="nav-link" href="./categoryadd.php">
                     <i class="fas fa-fw fa-table"></i>
+                    <span>Loại danh mục</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./categorylist.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Danh sách danh mục</span>
+                </a>
+            </li>
+            
+            <hr class="sidebar-divider d-none d-md-block">
+            <li class="nav-item">
+                <a class="nav-link" href="./brandadd.php">
+                    <i class="fas fa-fw fa-table"></i>
                     <span>Loại sản phẩm</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./brandlist.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Danh sách loại sản phẩm</span>
                 </a>
             </li>
             <!-- Divider -->
@@ -52,6 +72,12 @@
                 <a class="nav-link" href="./productadd.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Sản phẩm</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./productlist.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Danh sách sản phẩm</span>
                 </a>
             </li>
         </ul>

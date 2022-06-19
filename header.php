@@ -1,9 +1,10 @@
 <?php 
-error_reporting(0); 
+//error_reporting(0); 
 session_start();
-include "/xampp/htdocs/doancoso/admin/class/header_class.php";
+include "./admin/class/header_class.php";
 $con = mysqli_connect("localhost", "root", "", "dacs");
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +17,15 @@ $con = mysqli_connect("localhost", "root", "", "dacs");
 	<script src="jquery-3.3.1.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="fontawesome/css/all.css">
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="./template/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="./template/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="./template/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="./template/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="./template/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="./template/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="./template/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="./template/css/style.css" type="text/css">
 </head>
 <body>
     <!--start menu-->
@@ -40,13 +50,14 @@ $con = mysqli_connect("localhost", "root", "", "dacs");
         while($row = mysqli_fetch_assoc($result)){       
         ?>
         <li class="nav-item active">
-        <a  class="nav-link" href="./giohang.php?page=category&id=<?php echo $row['category_id'] ?>"><?php echo $row['category_name'] ?> <span class="sr-only">(current)</span></a>
+        <a  class="nav-link" href="./sanpham1.php?page=category&id=<?php echo $row['category_id'] ?>"><?php echo $row['category_name'] ?> <span class="sr-only">(current)</span></a>
         
         </li>
         <?php
       }
       }
       ?>
+      
       
       <!-- <li class="nav-item dropdown">
         <a class="nav-link" href="./giohang.php" id="navbarDropdown">Sản phẩm</a>
@@ -68,12 +79,13 @@ $con = mysqli_connect("localhost", "root", "", "dacs");
          echo "$login $registor";}          
         ?>
       </li>
-
     </ul>
     </div>
 		</div>
     </nav>
     <!--end menu-->
+
+
 
 
  
