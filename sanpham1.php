@@ -29,8 +29,8 @@
                             <span class="new-price"><?php echo number_format($row["product_discount"],0,",",".") ?> đ</span>
                         </div>
                         <p>
-                            <a href="<?php echo "./giohang.php?page=cart&id=".$row["product_id"] ?>" class="btn btn-primary"><i class="fa-solid fa-cart-arrow-down"></i></a>
-                            <a href="<?php echo "./detail.php?page=details&id=".$row["product_id"] ?>" class="btn btn-outline-info">Xem chi tiết</a>
+                            <a href="<?php echo "./cart1.php?page=cart1&id=".$row["product_id"] ?>" class="btn btn-primary"><i class="fa-solid fa-cart-arrow-down"></i></a>
+                            <a href="<?php echo "./detail.php?page=details&id=".$row["product_id"] ?>&action='add'" class="btn btn-outline-info">Xem chi tiết</a>
                         </p>
                     </div>
                 </div>

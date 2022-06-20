@@ -1,7 +1,8 @@
 <?php 
-//error_reporting(0); 
-session_start();
 include "./admin/class/header_class.php";
+error_reporting(0); 
+session_start();
+$cart = (isset($_SESSION['cart']))? $_SESSION['cart'] : [];
 $con = mysqli_connect("localhost", "root", "", "dacs");
 ?>
 
@@ -78,6 +79,9 @@ $con = mysqli_connect("localhost", "root", "", "dacs");
         else {
          echo "$login $registor";}          
         ?>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="./cart.php?id=<?php echo $_SESSION['cart'] ?>">Giỏ hàng <?php echo count($cart) ?><span class="sr-only">(current)</span></a>
       </li>
     </ul>
     </div>

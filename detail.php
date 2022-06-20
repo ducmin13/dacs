@@ -16,8 +16,8 @@
                     
           ?>
     <div class="container">
+        <form method="GET" action="cart1.php">
         <div class="row">
-        
             <div class="col-lg-6 col-md-6">
                 <div class="product__details__pic">
                     <div class="product__details__pic__item">
@@ -43,12 +43,15 @@
                     <div class="product__details__price">Giá hiện tại: <?php echo number_format($row["product_discount"],0,",",".")?> đ</div>
                     <div class="product__details__quantity">
                         <div class="quantity">
-                            <div class="pro-qty">
-                                <input type="text" value="1">
+                            <div class="quantity">                           
+                                <div class="pro-qty">
+                                    <input name="quantity" type="number" value="1" min="1" max="1000">
+                                    <input type="hidden" name="id" value="<?php echo $row['product_id']?>">
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <a href="<?php echo "./giohang.php?page=cart&id=".$row["product_id"] ?>" class="primary-btn">Thêm vào giỏ hàng</a>
+                    <button type="submit" href="<?php echo "./cart1.php?page=cart&id=".$row["product_id"] ?>" class="primary-btn">Thêm vào giỏ hàng</button>
                     <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
                     <ul>
                     <p> 
@@ -66,11 +69,9 @@
                         </li>
                     </ul>
                 </div>
-            </div>
-
-            
-            
+            </div>      
         </div>
+        </form>
     </div>
     <?php
              }}}
