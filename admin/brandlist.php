@@ -38,7 +38,10 @@
                         <td>
                             <?php echo $result['brand_name']?>
                         </td>
-                        <td><a href="brandedit.php ? brand_id=<?php echo $result['brand_id'] ?>">Sửa| <a href="branddelete.php?brand_id=<?php echo $result['brand_id'] ?> "> Xóa</a></a></td>
+                        <td>
+                            <a href="brandedit.php ? brand_id=<?php echo $result['brand_id'] ?>" title="Sửa" class="btn btn-success"><i class="fa fa-fw fa-edit"></i></a>
+                            <a href="branddelete.php?brand_id=<?php echo $result['brand_id'] ?> " title="Xóa" class="btn btn-danger"><i class="fa fa-fw fa-trash"></i></a>
+                        </td>
                     </tr>
                     <?php 
                     }

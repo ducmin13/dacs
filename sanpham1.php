@@ -1,5 +1,6 @@
 <?php
     include "./header.php";
+    include "slider.php";
 ?>
 
    <!--show products-->
@@ -20,7 +21,7 @@
                                 max-height:800px;
                                 width: auto;
                                 height: auto;
-                                } </style>   
+                                } </style>
                     <img href="" class="img-thumbnail" src="<?php echo "./admin/uploads/".$row["product_img"] ?>"  alt="<?php echo $row["product_name"]?>" >
                     <div class="caption">     
                         <h6><a href="<?php echo "./detail.php?page=details&id=".$row["product_id"] ?>"><?php echo $row["product_name"]?></a></h6>

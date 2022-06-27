@@ -1,6 +1,6 @@
 <?php
     include "./header.php";
-    
+    include "./slider.php";
 ?>
 
   <div class="container">

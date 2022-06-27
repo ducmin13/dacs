@@ -1,6 +1,5 @@
 <?php
     include "./header.php";
-
 ?>
 <section class="shoping-cart spad">
     <div class="container">
@@ -17,14 +16,13 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody>    
-                            <?php $total_price = 0; ?>        
+                        <tbody> 
+                            <?php $total_price = 0; ?>                               
                             <?php 
                             foreach ($cart as $key => $value):
                                 $total_price += ($value["product_discount"] * $value["quantity"]);
-                            ?>                           
+                            ?>                                          
                             <tr>
-                            
                                 <td class="shoping__cart__item">
                                     <img style="width:200px;height:200px;" src="<?php echo "./admin/uploads/".$value["product_img"] ?>" alt="">
                                     <h5><?php echo $value["product_name"]?></h5>
@@ -32,18 +30,26 @@
                                 <td class="shoping__cart__price">
                                     <?php echo number_format($value["product_discount"],0,",",".") ?> đ
                                 </td>
-                                <td class="shoping__cart__quantity">                              
-                                    <input type="number" value="<?php echo $value["quantity"] ?>" min="1" max="1000">
+                                 
+                                <td class="shoping__cart__quantity">   
+                                <form action="./cart1.php">      
+                                    <input type="hidden" name="action" value="update">                                                                                      
+                                    <input type="hidden" name="id" value="<?php echo $value['product_id'] ?>"> 
+                                    <input type="number" name="quantity" value="<?php echo $value["quantity"] ?>" min="1" max="1000">  
+                                    <button type="submit" class="btn btn-danger">Cập nhật</button>   
+                                </form> 
                                 </td>
+                                
                                 <td class="shoping__cart__total">
                                     <?php echo number_format(($value["product_discount"] * $value["quantity"]),0,",",".")?> đ
                                 </td>
                                 <td class="shoping__cart__item__close">
-                                    <a href="cart1.php?id=<?php echo $value['product_id'] ?>&action=delete" class="btn btn-danger">Huỷ</a>
-                                </td>                              
-                            </tr>                                                                      
+                                    <a href="cart1.php?id=<?php echo $value['product_id'] ?>&action=delete" class="btn btn-danger">Huỷ</a>                               
+                                </td>                                                   
+                            </tr>  
+                                                                                               
                             <?php endforeach?>            
-                            </form>
+                            
                         </tbody>
                     </table>
                 </div>
@@ -69,7 +75,7 @@
                         <li>Giảm giá<span>0 NVĐ</span></li>
                         <li>Tổng tiền<span><?php echo number_format(($total_price),0,",",".") ?> đ</span></li>
                     </ul>
-                    <a href="#" class="primary-btn">Đặt hàng</a>
+                    <a href="./giaohang.php?id=<?php echo $value['product_id'] ?>" class="primary-btn">Đặt hàng</a>
                 </div>
             </div>
         </div>

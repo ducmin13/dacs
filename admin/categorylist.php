@@ -35,7 +35,10 @@
                         <td>
                             <?php echo $result['category_name']?>
                         </td>
-                        <td><a href="categoryedit.php?category_id=<?php echo $result['category_id'] ?>">Sửa| <a href="categorydelete.php?category_id=<?php echo $result['category_id'] ?> "> Xóa</a></a></td>
+                        <td>
+                        <a href="categoryedit.php?category_id=<?php echo $result['category_id'] ?>" title="Sửa" class="btn btn-success"><i class="fa fa-fw fa-edit"></i></a>
+                        <a href="categorydelete.php?category_id=<?php echo $result['category_id'] ?> " title="Xóa" class="btn btn-danger"><i class="fa fa-fw fa-trash"></i></a>
+                        </td>
                     </tr>
                     <?php 
                     }

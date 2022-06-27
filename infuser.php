@@ -8,6 +8,7 @@
     if(isset($_POST['btncapnhat'])==true){
 
         $username   = $_POST['username'];
+        $name   = $_POST['name'];
         $email      = $_POST['email'];
         $phone   = $_POST['phone'];
         $address = $_POST['address'];
@@ -34,7 +35,8 @@
         }
 
         $query1 = mysqli_query($con,"UPDATE member SET 
-        email = '$email' ,
+        name = '$name',
+        email = '$email',
         phone = '$phone',
         address = '$address'
         WHERE username = '$username' ");
@@ -75,7 +77,12 @@
                         <input value="<?php echo $r['username'] ?>" type="username" name="username" 
                         id="username" class="form-control"required readonly>
                     </div>
-
+                    <div class="form-group">
+                        <label for="name">Tên </label>
+                        <input value="<?php echo $r['name'] ?>" type="name" name="name" 
+                        id="name" class="form-control"required>
+                    </div>   
+                
                     <div class="form-group">
                         <label for="phone">Số điện thoại</label>
                         <input value="<?php echo $r['phone'] ?>" type="phone" name="phone" 

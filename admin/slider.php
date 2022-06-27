@@ -80,6 +80,13 @@
                     <span>Danh sách sản phẩm</span>
                 </a>
             </li>
+            <hr class="sidebar-divider d-none d-md-block">
+            <li class="nav-item">
+                <a class="nav-link" href="./orderslist.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Đơn hàng</span>
+                </a>
+            </li>
         </ul>
         <!-- End of Sidebar -->
 

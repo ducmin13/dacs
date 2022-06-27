@@ -1,9 +1,13 @@
 <?php 
 include "./admin/class/header_class.php";
+include "./admin/func.php";
 error_reporting(0); 
 session_start();
 $cart = (isset($_SESSION['cart']))? $_SESSION['cart'] : [];
 $con = mysqli_connect("localhost", "root", "", "dacs");
+
+$query = mysqli_query($con,"SELECT * FROM member WHERE username = '$_SESSION[username]' ");
+$member=mysqli_fetch_assoc($query);
 ?>
 
 <!DOCTYPE html>
@@ -12,8 +16,11 @@ $con = mysqli_connect("localhost", "root", "", "dacs");
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>TMDSport - Hệ thống Shop đồ thể thao uy tín</title>
-	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./admin/style.css" media="screen" >
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<div class="admin_content-right-category_list">
 	<!--load jquery truoc khi load bootstrap js-->
 	<script src="jquery-3.3.1.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
@@ -44,6 +51,9 @@ $con = mysqli_connect("localhost", "root", "", "dacs");
     	<li class="nav-item active">
         <a class="nav-link" href="./index.php">Trang chủ<span class="sr-only">(current)</span></a>
       </li>  
+      <li class="nav-item active">
+        <a class="nav-link" href="./gioithieu.php">Giới thiệu<span class="sr-only">(current)</span></a>
+      </li>
       <?php 
       $query = "SELECT * FROM tbl_category WHERE  `status` = 1 ";
       $result = mysqli_query($con,$query) or die ("lỗi");
@@ -58,35 +68,40 @@ $con = mysqli_connect("localhost", "root", "", "dacs");
       }
       }
       ?>
-      
-      
-      <!-- <li class="nav-item dropdown">
-        <a class="nav-link" href="./giohang.php" id="navbarDropdown">Sản phẩm</a>
-        <div class="dropdown-content">
-          <a class="dropdown-item" href="#">Vợt cầu lông Yonex</a>
-          <a class="dropdown-item" href="#">Vợt cầu lông Victor</a>
-        </div>
-      </li> -->
-      <li class="nav-item active">
-      <?php    
-      $registor = '<a style="float: left;" class="nav-link" href="./formdangky.php"> Đăng ký <span class="sr-only">(current)</span></a>';
-      $login = '<a style="float: left;" class="nav-link" href="./formdangnhap.php"> Đăng nhập <span class="sr-only">(current)</span></a>';
-      if (isset($_SESSION['username']))
-      {
-        $logout = '<a style="float: left;" class="nav-link fa-solid fa-arrow-right-from-bracket" href="./admin/logout.php"><span class="sr-only">(current)</span></a>';    
-        $name = '<a style="float: left;" class="nav-link" href="./infuser.php" >'.$_SESSION['username'].'<span class="sr-only">(current)</span></a>';        
-        echo "$name $logout";}
-        else {
-         echo "$login $registor";}          
-        ?>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="./cart.php?id=<?php echo $_SESSION['cart'] ?>">Giỏ hàng <?php echo count($cart) ?><span class="sr-only">(current)</span></a>
-      </li>
     </ul>
     </div>
 		</div>
+    <div class="mx-auto order-0">
+        <a class="navbar-brand mx-auto" href="./index.php">TMDSPORT</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <?php    
+                $registor = '<a style="float: left;" class="nav-link" href="./formdangky.php"> Đăng ký <span class="sr-only">(current)</span></a>';
+                $login = '<a style="float: left;" class="nav-link" href="./formdangnhap.php"> Đăng nhập <span class="sr-only">(current)</span></a>';
+                if (isset($_SESSION['username']))
+                {
+                  $logout = '<a style="float: left;" class="nav-link fa-solid fa-arrow-right-from-bracket" href="./admin/logout.php"><span class="sr-only">(current)</span></a>';    
+                  $name = '<a style="float: left;" class="nav-link" href="./infuser.php" >'.$_SESSION['username'].'<span class="sr-only">(current)</span></a>';        
+                  echo "$name $logout";}
+                  else {
+                  echo "$login $registor";}          
+            ?>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="./cart.php?id=<?php echo $_SESSION['cart'] ?>"><i class="fa-solid fa-bag-shopping"></i> <?php echo count($cart) ?><span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="./mycart.php?id=<?php echo $member['id'] ?>">Đơn hàng của tôi</a>
+            </li>     
+        </ul>
+    </div>
     </nav>
+
     <!--end menu-->
 
 

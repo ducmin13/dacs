@@ -70,7 +70,10 @@
                             <img style="" src="./uploads/<?php echo $result["product_img"] ?>" alt="<?php echo $row1["product_id"]?>">              
                             
                         </td>
-                        <td><a href="productedit.php?product_id=<?php echo $result['product_id'] ?>">Sửa| <a href="productdelete.php?product_id=<?php echo $result['product_id'] ?> "> Xóa</a></a></td>
+                        <td>
+                        <a href="productedit.php?product_id=<?php echo $result['product_id'] ?>" title="Sửa" class="btn btn-success"><i class="fa fa-fw fa-edit"></i></a>
+                        <a href="productdelete.php?product_id=<?php echo $result['product_id'] ?> " title="Xóa" class="btn btn-danger"><i class="fa fa-fw fa-trash"></i></a>
+                        </td>
                     </tr>
                     <?php 
                     }

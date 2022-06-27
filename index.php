@@ -1,17 +1,17 @@
 
     <?php 
       include "header.php";
-      include "slider.php";
+      include "./slider.php"
     ?>
 <section class="hero">
     <div class="container">
-        <div class="row">
+        <div class="row">          
             <div class="col-lg-3">
-                <div class="hero__categories">
-                    <div class="hero__categories__all">
+                <div class="hero__categories">                        
+                    <div class="hero__categories__all">                      
                         <i class="fa fa-bars"></i>
                         <span>Danh mục sản phẩm</span>
-                    </div>
+                    </div>              
                     <ul>
                         <?php 
                         $query = "SELECT * FROM tbl_brand WHERE  status = 1";
@@ -30,8 +30,7 @@
                     </ul>
                 </div>
             </div>
-
-            <div class="col-lg-9">
+            <div class="col-lg-9 align-self-center">
                 <!--start slider-->
                 <div id="demo" class="carousel slide" data-ride="carousel">
                     <ul class="carousel-indicators">
@@ -61,12 +60,14 @@
                     </a>
                 </div>
                 <!--end slider-->
-
+                    
             </div>
             </div>
     </div>
 </section>
 <!-- Hero Section End -->
+
+
 <!-- Categories Section Begin -->
 <section class="categories">
     <div class="container">
@@ -79,25 +80,25 @@
             <div class="categories__slider owl-carousel">
                 <div class="col-lg-3">
                     <div class="categories__item set-bg">
-                        <img src="./template/img/sp1.jpg" alt="Alternate Text" />
+                        <img src="./images/sp1.1.jpg" alt="Alternate Text" />
                         <h5><a href="#">Giày Yonex</a></h5>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="categories__item set-bg">
-                        <img src="./template/img/sp2.jpg" alt="Alternate Text" />
+                        <img src="./admin/uploads/sp1.1.jpg" alt="Alternate Text" />
                         <h5><a href="#">Giày Victor</a></h5>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="categories__item set-bg">
-                        <img src="./template/img/sp3.jpg" alt="Alternate Text" />
+                        <img src="./admin/uploads/sp1.1.jpg" alt="Alternate Text" />
                         <h5><a href="#">Vợt Yonex</a></h5>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="categories__item set-bg">
-                        <img src="./template/img/sp5.jpg" alt="Alternate Text" />
+                        <img src="./admin/uploads/sp1.1.jpg" alt="Alternate Text" />
                         <h5><a href="#">Balo Yonex</a></h5>
                     </div>
                 </div>
