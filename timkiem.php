@@ -1,26 +1,23 @@
-<?php
-    include "./header.php";
+<?php include "header.php" ;
     include "slider.php";
 ?>
 
-   <!--show products-->
-     <div class="container">
-         <div class="row">
-              
-            <?php  
-            $item_per_page = !empty($_GET['per_page'])?$_GET['per_page']:8;
-            $current_page = !empty($_GET['page'])?$_GET['page']:1;
-            $offset = ($current_page - 1) * $item_per_page; 
-            $query = "SELECT * FROM tbl_product WHERE category_id = '$_GET[id]' ORDER BY 'id' ASC LIMIT $item_per_page OFFSET $offset";
-            $resultPro = mysqli_query($con,$query) or die ("lỗi");
+<?php 
+    $con = mysqli_connect("localhost", "root", "", "dacs");
+    if(isset($_GET['keyword'])){
+        $keyword = $_GET['keyword'];
+    }else{
+        $keyword = '';
+    }
+    $query = "SELECT * FROM tbl_product, tbl_brand WHERE tbl_product.brand_id = tbl_brand.brand_id AND tbl_product.product_name LIKE '%".$keyword."%'";
+    $result = mysqli_query($con,$query);
+?>
 
-                 
-            $pro =  mysqli_query($con,"SELECT * FROM tbl_product");
-            $pro =  $pro ->num_rows;
-            $total_page = ceil($pro / $item_per_page);
-
-            if(mysqli_num_rows($resultPro) > 0 ){   
-                while($row = mysqli_fetch_assoc($resultPro)){ 
+<div class="container">
+<div class="row">
+<?php 
+if(mysqli_num_rows($result) > 0 ){   
+                while($row = mysqli_fetch_assoc($result)){ 
              ?>
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                 <div class="thumbnail">
@@ -48,13 +45,10 @@
 
             <?php
                 }
+            }else{
+                echo "<h3>Không tìm thấy sản phẩm nào</h3>";
             }
             ?>
-         </div>
-         <?php include "./page.php" ?>
-        
+            </div>   
      </div>
-
-     <?php include "./footer.php" ?>
-     
-     <!--end show products-->
+<?php include "footer.php" ?>

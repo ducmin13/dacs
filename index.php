@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">          
             <div class="col-lg-3">
-                <div class="hero__categories">                        
+                <div class="hero__categories">                     
                     <div class="hero__categories__all">                      
                         <i class="fa fa-bars"></i>
                         <span>Danh mục sản phẩm</span>
@@ -20,7 +20,7 @@
                           while($row = mysqli_fetch_assoc($result)){       
                           ?>
                           <li class="nav-item active">
-                          <a  class="nav-link" href="./sanpham2.php?page=brand&id=<?php echo $row['brand_id'] ?>"><?php echo $row['brand_name'] ?> <span class="sr-only">(current)</span></a>
+                          <a  class="nav-link" href="./sanpham2.php?id=<?php echo $row['brand_id'] ?>"><?php echo $row['brand_name'] ?> <span class="sr-only">(current)</span></a>
                           
                           </li>
                           <?php

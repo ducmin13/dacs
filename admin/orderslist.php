@@ -51,7 +51,7 @@
                         </td>
                         <td>
                             <a href="./orderdetail.php?id=<?php echo $value['order_id']?>" title="Xem chi tiết" class="btn btn-success"><i class="fa fa-fw fa-edit"></i></a>
-                            <a href="./func.php?id=<?php echo $value['order_id'] ?>" title="Xóa danh mục" class="btn btn-danger"><i class="fa fa-fw fa-trash"></i></a>
+                           
                         </td>
                     </tr>
                     <?php 

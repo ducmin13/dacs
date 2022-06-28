@@ -11,7 +11,8 @@
 
 <div class="admin_content-right">
 <div class="admin_content-right-category_list">
-                <h1>Danh sách sản phẩm</h1>
+
+                <h1>Danh sách sản phẩm</h1>         
                 <table>
                     <tr>
                         <th>STT</th>

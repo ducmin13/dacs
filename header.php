@@ -61,8 +61,7 @@ $member=mysqli_fetch_assoc($query);
         while($row = mysqli_fetch_assoc($result)){       
         ?>
         <li class="nav-item active">
-        <a  class="nav-link" href="./sanpham1.php?page=category&id=<?php echo $row['category_id'] ?>"><?php echo $row['category_name'] ?> <span class="sr-only">(current)</span></a>
-        
+        <a  class="nav-link" href="./sanpham1.php?id=<?php echo $row['category_id']?>"><?php echo $row['category_name'] ?> <span class="sr-only">(current)</span></a>     
         </li>
         <?php
       }

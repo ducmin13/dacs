@@ -35,6 +35,7 @@
                 alert('Đặt hàng thành công!');
                 window.open('./index.php','_self', 1);
                 </script>";
+            header('Location: mycart.php');
             exit();
         }
     }
@@ -92,7 +93,7 @@
         </form>
         <hr />
         <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="admin/xulyatm.php">
-        <input type="hidden" name ="total" value="<?php echo $total_price ?>">
+            <input type="hidden" name ="total" value="<?php echo $total_price ?>">
             <input type="submit" name="atm" value="Thanh toán thẻ ATM" class="btn btn-danger">
         </form>
 

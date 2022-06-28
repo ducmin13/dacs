@@ -6,8 +6,17 @@
   <div class="container">
       <div class="row">     
         <?php 
-         $query = "SELECT * FROM tbl_product WHERE `status` = 1 and brand_id =".$_GET['id'];
-         $resultPro = mysqli_query($con,$query) or die ("lỗi");
+        $item_per_page = !empty($_GET['per_page'])?$_GET['per_page']:8;
+        $current_page = !empty($_GET['page'])?$_GET['page']:1;
+        $offset = ($current_page - 1) * $item_per_page; 
+
+        $query = "SELECT * FROM tbl_product WHERE brand_id = '$_GET[id]' ORDER BY 'id' ASC LIMIT $item_per_page OFFSET $offset";
+        $resultPro = mysqli_query($con,$query) or die ("lỗi");
+
+        $pro =  mysqli_query($con,"SELECT * FROM tbl_product WHERE brand_id = '$_GET[id]'");
+        $pro =  $pro ->num_rows;
+        $total_page = ceil($pro / $item_per_page);
+
          if(mysqli_num_rows($resultPro) > 0 ){   
              while($row = mysqli_fetch_assoc($resultPro)){ 
           ?>
@@ -38,4 +47,6 @@
             }}
             ?>
         </div>
-  </div>
+        <?php include "./page.php" ?>
+    </div>
+  <?php include "./footer.php" ?>

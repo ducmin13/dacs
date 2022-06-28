@@ -41,6 +41,8 @@
                     <h3><?php echo $row["product_name"]?></h3>                  
                     <div style="text-decoration: line-through;" class="product__details__price">Giá gốc: <?php echo number_format($row["product_price"],0,",",".")?> đ </div>
                     <div class="product__details__price">Giá hiện tại: <?php echo number_format($row["product_discount"],0,",",".")?> đ</div>
+                    <h5>Kho: <?php echo $row['product_amount']?></h5>
+                    <hr>
                     <div class="product__details__quantity">
                         <div class="quantity">
                             <div class="quantity">                           
@@ -51,9 +53,11 @@
                             </div>
                         </div>
                     </div>
+                    
                     <button type="submit" href="<?php echo "./cart1.php?page=cart&id=".$row["product_id"] ?>" class="primary-btn">Thêm vào giỏ hàng</button>
                     <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
                     <ul>
+                    
                     <p> 
                         <?php echo $row["product_desc"]?>
                     </p>

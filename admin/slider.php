@@ -87,7 +87,15 @@
                     <span>Đơn hàng</span>
                 </a>
             </li>
+            <hr class="sidebar-divider d-none d-md-block">
+            <li class="nav-item">
+                <a class="nav-link" href="./report.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Thống kê</span>
+                </a>
+            </li>
         </ul>
+     
         <!-- End of Sidebar -->
 
     <!-- Bootstrap core JavaScript-->
